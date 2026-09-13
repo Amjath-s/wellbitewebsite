@@ -4,10 +4,10 @@ type WordmarkProps = {
 };
 
 const sizeClass = {
-  sm: "text-lg",
-  md: "text-xl",
-  lg: "text-2xl md:text-3xl",
-  hero: "text-5xl sm:text-6xl md:text-7xl",
+  sm: "text-[16px]",
+  md: "text-[16px]",
+  lg: "type-display",
+  hero: "type-display",
 } as const;
 
 export function Wordmark({ className = "", size = "md" }: WordmarkProps) {
@@ -17,7 +17,7 @@ export function Wordmark({ className = "", size = "md" }: WordmarkProps) {
       aria-label="WellBite"
     >
       <span className="text-primary">Well</span>
-      <span className="text-[#E67E22]">Bite</span>
+      <span className="text-bite">Bite</span>
     </span>
   );
 }
