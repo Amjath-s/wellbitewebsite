@@ -1,6 +1,8 @@
 # WellBite Website
 
-Customer marketing site for **WellBite** — healthy meal subscriptions matched to your nutrition profile.
+Public marketing site for **WellBite** — a nutrition-focused meal subscription platform.
+
+This is **not** the admin dashboard or the customer mobile app.
 
 ## Stack
 
@@ -17,35 +19,40 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Scripts
-
-| Command         | Description              |
-| --------------- | ------------------------ |
-| `npm run dev`   | Start development server |
-| `npm run build` | Production build         |
-| `npm run start` | Serve production build   |
-| `npm run lint`  | Run ESLint               |
-
 ## Pages
 
-- `/` — Home
-- `/how-it-works` — Profile → plan → pay → delivery
-- `/plans` — Four meal packages
-- `/about` — Why WellBite
-- `/contact` — Get the app / early access
+| Path | Purpose |
+|------|---------|
+| `/` | Home |
+| `/meal-plans` | Meal plans (no prices until finalized) |
+| `/how-it-works` | How the service works |
+| `/about` | About WellBite |
+| `/contact` | Mailto contact (no form backend) |
+| `/privacy-policy` | Privacy Policy |
+| `/terms` | Terms & Conditions |
+| `/refund-policy` | Cancellation & Refund Policy |
+| `/shipping-policy` | Shipping / Delivery Policy |
+
+`/plans` redirects to `/meal-plans`.
+
+## Business configuration
+
+Edit [`src/lib/business.ts`](src/lib/business.ts) before launch:
+
+- Support email, phone, address
+- Delivery area / schedule / refund / cancellation placeholders
+
+Plan names and options live in [`src/lib/plans.ts`](src/lib/plans.ts) (mirrored from the customer app).
 
 ## Brand tokens
 
-Defined in `src/app/globals.css` (`:root` + Tailwind `@theme`):
+Defined in `src/app/globals.css`:
 
-| Token        | Value   |
-| ------------ | ------- |
-| Primary      | `#2D4739` |
-| Cream        | `#F3F1EC` |
-| Surface      | `#FFFFFF` |
-| Border       | `#ECEAE4` |
-| Soft green   | `#E6EFE8` |
-| Text         | `#1C1C1C` |
-| Muted        | `#6E6E6E` |
+| Token | Value |
+|-------|-------|
+| Primary | `#2D4739` |
+| Bite accent | `#E67E22` |
+| Cream | `#F3F1EC` |
+| Soft cream | `#FAF8F4` |
 
-Fonts: **Playfair Display** (titles), **Inter** (body/UI), **Nunito** (wordmark, matching the app).
+Fonts: **Playfair Display** (headings), **Inter** (body/UI), **Nunito** (wordmark).
