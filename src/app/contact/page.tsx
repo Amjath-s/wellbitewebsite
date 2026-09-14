@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+
 import { CtaLink } from "@/components/CtaLink";
 import { PageShell, Placeholder, SectionHeader } from "@/components/ui";
 import { business } from "@/lib/business";
@@ -32,7 +33,7 @@ export default function ContactPage() {
             ready to send.
           </p>
           <div className="mt-6">
-           
+            <ContactForm />
           </div>
         </div>
 
