@@ -14,29 +14,34 @@ const legalLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms & Conditions" },
   { href: "/refund-policy", label: "Cancellation & Refund Policy" },
-  { href: "/shipping-policy", label: "Shipping Policy" },
+  { href: "/shipping-policy", label: "Shipping / Delivery Policy" },
 ] as const;
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-border bg-surface">
-      <div className="mx-auto grid max-w-[76rem] gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
+    <footer className="mt-auto bg-footer text-white">
+      <div className="site-shell grid gap-12 py-16 lg:grid-cols-[1.5fr_1fr_1fr]">
         <div>
-          <Wordmark size="sm" />
-          <p className="mt-3 text-sm font-medium text-primary">{business.tagline}</p>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">
-            {business.shortDescription}
+          <Wordmark size="sm" invert />
+          <p className="mt-4 font-display text-2xl leading-tight text-white">
+            Small choices.
+            <br />
+            Big results.
+          </p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#C9D5CD]">
+            Nutrition-focused meal plans designed to make healthy eating
+            simpler.
           </p>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold text-text">Navigation</h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-muted">
+          <h2 className="type-caption uppercase text-[#C9D5CD]">Explore</h2>
+          <ul className="mt-4 space-y-3 text-sm text-white/90">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="transition-colors hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  className="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   {link.label}
                 </Link>
@@ -46,45 +51,38 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold text-text">Legal</h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-muted">
+          <h2 className="type-caption uppercase text-[#C9D5CD]">Legal</h2>
+          <ul className="mt-4 space-y-3 text-sm text-white/90">
             {legalLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="transition-colors hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  className="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-semibold text-text">Contact</h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-muted">
-            <li>
+          <div className="mt-8 space-y-2 text-sm text-[#C9D5CD]">
+            <p>
               <a
                 href={supportMailto({ subject: "WellBite inquiry" })}
-                className="transition-colors hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="transition-colors hover:text-white"
               >
                 <span className="placeholder-mark">{business.supportEmail}</span>
               </a>
-            </li>
-            <li>
+            </p>
+            <p>
               <span className="placeholder-mark">{business.phone}</span>
-            </li>
-            <li className="leading-relaxed">
-              <span className="placeholder-mark">{business.address}</span>
-            </li>
-          </ul>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="border-t border-border">
-        <p className="mx-auto max-w-[76rem] px-5 py-4 text-xs text-muted sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} WellBite. All rights reserved.
+      <div className="border-t border-white/10">
+        <p className="site-shell py-5 text-xs text-[#C9D5CD]">
+          © {new Date().getFullYear()} WellBite
         </p>
       </div>
     </footer>

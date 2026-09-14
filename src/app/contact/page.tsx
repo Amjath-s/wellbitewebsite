@@ -1,93 +1,77 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 import { CtaLink } from "@/components/CtaLink";
 import { PageShell, Placeholder, SectionHeader } from "@/components/ui";
-import { business, supportMailto } from "@/lib/business";
+import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact",
   description:
     "Contact WellBite for questions about meal plans, subscriptions, delivery, or support.",
   openGraph: {
-    title: "Contact Us · WellBite",
-    description: "Reach WellBite by email for support and business inquiries.",
+    title: "Contact · WellBite",
+    description: "Reach WellBite with questions about plans, delivery, or support.",
   },
 };
 
 export default function ContactPage() {
-  const mailto = supportMailto({
-    subject: "WellBite inquiry",
-    body: "Hi WellBite team,\n\n",
-  });
-
   return (
     <PageShell>
       <SectionHeader
         eyebrow="Contact"
-        title="Contact Us"
-        description="Questions about meal plans, delivery, or your subscription? Reach us by email — your mail app will open with our address filled in. No form, no server."
+        title="Let's talk."
+        description="Have a question about WellBite, meal plans, subscriptions, or delivery? We'd love to hear from you."
       />
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
-        <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6">
-          <h2 className="text-lg font-semibold text-text">Email us</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            Opens your default email app with a message addressed to WellBite
-            support.
+      <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="rounded-[24px] border border-border bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
+          <h2 className="text-lg font-semibold text-text">Send a message</h2>
+          <p className="mt-2 text-sm text-text-secondary">
+            Fill in the form and we&apos;ll open your email app with the message
+            ready to send.
           </p>
-          <p className="mt-3 text-base">
-            <Placeholder>{business.supportEmail}</Placeholder>
-          </p>
-          <div className="mt-4">
-            <CtaLink href={mailto} external>
-              Send us an email
-            </CtaLink>
+          <div className="mt-6">
+            <ContactForm />
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-muted">
-            Replace{" "}
-            <Placeholder>{business.supportEmail}</Placeholder> in site
-            configuration with your real support address before launch.
-          </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Phone
-            </h2>
+            <h2 className="type-caption uppercase text-primary">Email</h2>
+            <p className="mt-2 text-base text-text">
+              <Placeholder>{business.supportEmail}</Placeholder>
+            </p>
+          </div>
+          <div>
+            <h2 className="type-caption uppercase text-primary">Phone</h2>
             <p className="mt-2 text-base text-text">
               <Placeholder>{business.phone}</Placeholder>
             </p>
           </div>
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Business / service location
-            </h2>
+            <h2 className="type-caption uppercase text-primary">Address</h2>
             <p className="mt-2 text-base leading-relaxed text-text">
               <Placeholder>{business.address}</Placeholder>
             </p>
           </div>
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Subscriptions
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Meal plan subscriptions are managed in the WellBite mobile app.
-              App store links will appear here when available. For now, explore{" "}
+            <h2 className="type-caption uppercase text-primary">Subscriptions</h2>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              Meal plan subscriptions are managed in the WellBite mobile app. For
+              now, explore{" "}
               <Link
                 href="/meal-plans"
                 className="font-medium text-primary underline-offset-2 hover:underline"
               >
                 meal plans
               </Link>{" "}
-              or email us with questions.
+              or send us a message.
             </p>
           </div>
-          <div>
-            <CtaLink href="/meal-plans" variant="secondary">
-              View meal plans
-            </CtaLink>
-          </div>
+          <CtaLink href="/meal-plans" variant="secondary">
+            View meal plans
+          </CtaLink>
         </div>
       </div>
     </PageShell>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CtaLink } from "@/components/CtaLink";
 import { Reveal } from "@/components/Reveal";
+import { AppFrame, SectionHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -9,8 +10,7 @@ export const metadata: Metadata = {
     "How WellBite works: choose a meal plan, set your preferences and duration, then receive meals on your schedule.",
   openGraph: {
     title: "How It Works · WellBite",
-    description:
-      "Three simple steps from plan selection to meal delivery.",
+    description: "Three simple steps from plan selection to meal delivery.",
   },
 };
 
@@ -19,84 +19,94 @@ const steps = [
     n: "01",
     title: "Choose your plan",
     body: "Select a meal plan based on your daily routine — 3 Meals, Breakfast + Dinner, Lunch + Dinner, or Breakfast + Lunch.",
+    kind: "app" as const,
+    label: "Meal Plans",
+    filename: "meal-plan.jpg",
   },
   {
     n: "02",
     title: "Set your preferences",
     body: "Choose your nutrition goals, meal options (salad pack or split delivery where available), and subscription duration (1–4 weeks).",
+    kind: "app" as const,
+    label: "Preferences",
+    filename: "plan-detail.jpg",
   },
   {
     n: "03",
     title: "Enjoy your meals",
     body: "Add your delivery address in the app. Meals are prepared and delivered according to your selected schedule. Coverage depends on kitchens available near you.",
+    kind: "food" as const,
   },
 ] as const;
 
 export default function HowItWorksPage() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="grid lg:grid-cols-2 lg:items-stretch">
-        <div className="relative z-10 flex justify-start">
-          <div className="flex w-full max-w-xl flex-col justify-center px-5 py-12 sm:px-6 sm:py-16 lg:max-w-[34rem] lg:pl-8 lg:pr-3 lg:py-20 xl:pl-10 xl:pr-2">
-            <p className="type-caption uppercase text-primary">How It Works</p>
-            <h1 className="type-display mt-3 text-primary">From plan to plate</h1>
-            <p className="type-body mt-4 text-muted">
-              A simple path to nutrition-focused meals — without cooking every
-              day.
-            </p>
+    <section className="bg-soft-cream">
+      <div className="site-shell section-pad">
+        <Reveal>
+          <SectionHeader
+            eyebrow="How It Works"
+            title={
+              <>
+                From plan to plate,
+                <br />
+                it&apos;s simple.
+              </>
+            }
+            description="Choose your plan, set your preferences, and let WellBite take care of the routine."
+            align="center"
+          />
+        </Reveal>
 
-            <ol className="mt-8 space-y-0">
-              {steps.map((step, i) => (
-                <Reveal as="li" key={step.n} delay={i * 90}>
-                  <div
-                    className={`grid gap-3 border-border py-5 sm:grid-cols-[3.5rem_1fr] sm:gap-5 ${
-                      i < steps.length - 1 ? "border-b" : ""
-                    }`}
-                  >
-                    <span className="font-display text-2xl text-primary/40">
-                      {step.n}
-                    </span>
-                    <div>
-                      <h2 className="text-lg font-semibold text-text">
-                        {step.title}
-                      </h2>
-                      <p className="mt-2 text-base leading-relaxed text-muted">
-                        {step.body}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <CtaLink href="/meal-plans" className="rounded-full px-7">
-                See meal plans
-              </CtaLink>
-              <CtaLink
-                href="/contact"
-                variant="secondary"
-                className="rounded-full border-primary/40 px-7"
+        <ol className="mt-16 space-y-16">
+          {steps.map((step, i) => (
+            <Reveal as="li" key={step.n} delay={i * 80}>
+              <div
+                className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
+                  i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
               >
-                Contact us
-              </CtaLink>
-            </div>
-          </div>
-        </div>
+                <div className="flex justify-center">
+                  {step.kind === "food" ? (
+                    <div className="food-image relative aspect-[4/5] w-full max-w-md overflow-hidden">
+                      <Image
+                        src="/images/how-it-works-box.jpg"
+                        alt="WellBite meal box with quinoa, roasted vegetables, greens, protein, and a soft-boiled egg"
+                        fill
+                        priority={i === 0}
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 28rem"
+                      />
+                    </div>
+                  ) : (
+                    <AppFrame label={step.label} filename={step.filename} />
+                  )}
+                </div>
 
-        <div className="relative min-h-[300px] w-full sm:min-h-[400px] lg:min-h-[min(88vh,720px)]">
-          <div className="hero-bowl-frame absolute inset-0">
-            <Image
-              src="/images/how-it-works-box.jpg"
-              alt="WellBite meal box with quinoa, roasted vegetables, greens, protein, and a soft-boiled egg"
-              fill
-              priority
-              className="object-cover object-[55%_center]"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+                <div>
+                  <p className="font-display text-4xl text-primary/25">
+                    {step.n}
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold text-text sm:text-3xl">
+                    {step.title}
+                  </h2>
+                  <p className="mt-4 max-w-md text-base leading-relaxed text-text-secondary">
+                    {step.body}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+
+        <Reveal delay={120}>
+          <div className="mt-16 flex flex-wrap justify-center gap-3">
+            <CtaLink href="/meal-plans">See meal plans</CtaLink>
+            <CtaLink href="/contact" variant="secondary">
+              Contact us
+            </CtaLink>
           </div>
-          <div className="hero-image-fade" aria-hidden />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

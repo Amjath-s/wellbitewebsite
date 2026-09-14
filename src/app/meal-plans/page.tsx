@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { CtaLink } from "@/components/CtaLink";
-import { PageShell, PlanGrid, SectionHeader } from "@/components/ui";
+import {
+  AppFrame,
+  PageShell,
+  PlanGrid,
+  SectionHeader,
+} from "@/components/ui";
 import {
   mealPlans,
   pricingNote,
@@ -42,31 +47,40 @@ export default function MealPlansPage() {
     <PageShell>
       <SectionHeader
         eyebrow="Meal Plans"
-        title="Choose your meal plan"
+        title={
+          <>
+            Choose the rhythm
+            <br />
+            that fits your day.
+          </>
+        }
         description="These are the real meal packages available in the WellBite app. Pick the rhythm that fits your day — pricing is confirmed in-app."
       />
 
-      <div className="mt-6">
+      <div className="mt-10 flex flex-wrap items-end justify-center gap-8 sm:gap-12">
+        <AppFrame label="Meal Plans" filename="meal-plan.jpg" />
+        <AppFrame label="Plan detail" filename="plan-detail.jpg" />
+      </div>
+
+      <div className="mt-12">
         <PlanGrid plans={mealPlans} ctaHref="/contact" />
       </div>
 
-      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+      <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted">
         {pricingNote}
       </p>
 
-      <section className="mt-6 border-t border-border pt-6">
-        <h2 className="font-display text-2xl text-text sm:text-3xl">
-          Subscription durations
-        </h2>
-        <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+      <section className="mt-14 border-t border-border pt-12">
+        <h2 className="type-subsection text-primary">Subscription durations</h2>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-text-secondary sm:text-base">
           Subscriptions activate the next calendar day with your selected plan
           meals.
         </p>
-        <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {subscriptionDurations.map((d) => (
             <li
               key={d.weeks}
-              className="rounded-xl border border-border bg-surface px-3 py-2"
+              className="rounded-[20px] border border-border bg-surface px-4 py-4"
             >
               <p className="font-semibold text-text">{d.label}</p>
               <p className="mt-1 text-sm text-muted">{d.days} delivery days</p>
@@ -75,21 +89,19 @@ export default function MealPlansPage() {
         </ul>
       </section>
 
-      <section className="mt-6 rounded-2xl bg-soft-green/50 px-3 py-4 sm:px-4">
-        <h2 className="font-display text-2xl text-text sm:text-3xl">
-          All plans include
-        </h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+      <section className="mt-12 rounded-[24px] border border-border bg-pale-sage/60 px-5 py-8 sm:px-8">
+        <h2 className="type-subsection text-primary">All plans include</h2>
+        <ul className="mt-6 grid gap-5 sm:grid-cols-2">
           {includes.map((item) => (
             <li key={item.title}>
               <h3 className="font-semibold text-text">{item.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted">
+              <p className="mt-1 text-sm leading-relaxed text-text-secondary">
                 {item.body}
               </p>
             </li>
           ))}
         </ul>
-        <div className="mt-4">
+        <div className="mt-8">
           <CtaLink href="/contact">Ask about plans</CtaLink>
         </div>
       </section>

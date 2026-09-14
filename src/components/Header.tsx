@@ -19,11 +19,15 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
@@ -32,13 +36,13 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ${
+      className={`sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         scrolled
-          ? "border-border/80 bg-white/90 shadow-sm backdrop-blur-md"
-          : "border-transparent bg-transparent"
+          ? "border-b border-border bg-[rgba(250,248,244,0.92)] backdrop-blur-[12px]"
+          : "border-b border-transparent bg-soft-cream"
       }`}
     >
-      <div className="mx-auto flex h-14 max-w-[76rem] items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
+      <div className="site-shell flex h-[76px] items-center justify-between gap-4">
         <Link
           href="/"
           className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -47,17 +51,20 @@ export function Header() {
           <Wordmark size="sm" />
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Main">
+        <nav
+          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex"
+          aria-label="Main"
+        >
           {nav.map((item) => {
             const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                className={`text-[15px] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                   active
                     ? "font-medium text-primary"
-                    : "text-muted hover:text-text"
+                    : "text-[#6E6E6E] hover:text-primary"
                 }`}
               >
                 {item.label}
@@ -69,14 +76,14 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/meal-plans"
-            className="hidden rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:inline-flex"
+            className="hidden h-[42px] items-center justify-center rounded-full bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:inline-flex"
           >
             Get Started
           </Link>
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-primary lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-primary lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -104,7 +111,7 @@ export function Header() {
       {open && (
         <nav
           id="mobile-nav"
-          className="border-t border-border bg-white px-5 py-4 lg:hidden"
+          className="border-t border-border bg-soft-cream px-5 py-4 lg:hidden"
           aria-label="Mobile"
         >
           <ul className="flex flex-col gap-1">
@@ -115,10 +122,10 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`block rounded-md px-3 py-3 text-base transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                    className={`block rounded-xl px-3 py-3 text-base transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                       active
-                        ? "bg-soft-green font-medium text-primary"
-                        : "text-muted hover:bg-soft-green/60 hover:text-text"
+                        ? "bg-pale-sage font-medium text-primary"
+                        : "text-muted hover:bg-pale-sage/70 hover:text-text"
                     }`}
                   >
                     {item.label}
@@ -130,7 +137,7 @@ export function Header() {
               <Link
                 href="/meal-plans"
                 onClick={() => setOpen(false)}
-                className="block rounded-lg bg-primary px-3 py-3 text-center text-base font-semibold text-white"
+                className="block rounded-full bg-primary px-3 py-3 text-center text-base font-semibold text-white"
               >
                 Get Started
               </Link>

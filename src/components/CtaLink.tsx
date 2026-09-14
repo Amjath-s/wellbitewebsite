@@ -9,17 +9,15 @@ type CtaLinkProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center rounded-lg px-4 py-2 type-caption tracking-normal font-semibold normal-case transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  "inline-flex min-h-11 items-center justify-center rounded-full px-6 text-[15px] font-semibold transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 const styles = {
-  primary:
-    "bg-primary text-white hover:bg-primary-soft hover:shadow-sm active:scale-[0.98]",
+  primary: "bg-primary text-white hover:bg-primary-soft",
   secondary:
-    "border border-primary/30 bg-surface text-primary hover:bg-soft-green active:scale-[0.98]",
-  accent:
-    "bg-bite text-white hover:brightness-110 hover:shadow-sm active:scale-[0.98]",
+    "border border-primary bg-transparent text-primary hover:bg-pale-sage",
+  accent: "bg-bite text-white hover:brightness-105",
   ghost:
-    "border border-border bg-transparent text-primary hover:bg-soft-green/60 active:scale-[0.98]",
+    "border border-white/35 bg-transparent text-white hover:bg-white/10",
 } as const;
 
 export function CtaLink({

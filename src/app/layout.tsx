@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { DM_Serif_Display, Inter, Nunito } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -7,25 +7,32 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const dmSerif = DM_Serif_Display({
+  variable: "--font-dm-serif",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400"],
   style: ["normal", "italic"],
 });
 
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["800"],
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://wellbite.app"),
   title: {
-    default: "WellBite | Healthy Meal Plans & Nutrition-Focused Meals",
+    default: "WellBite — Personalized Meal Plans & Nutritious Meals",
     template: "%s · WellBite",
   },
   description:
     "WellBite is a nutrition-focused meal subscription platform. Personalized meal plans and nutritious meals designed to make healthy eating simpler and more consistent.",
   openGraph: {
-    title: "WellBite | Healthy Meal Plans & Nutrition-Focused Meals",
+    title: "WellBite — Personalized Meal Plans & Nutritious Meals",
     description:
       "Personalized meal plans and nutritious meals designed to make healthy eating simpler and more consistent.",
     type: "website",
@@ -37,9 +44,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${dmSerif.variable} ${nunito.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-full flex-col bg-cream font-sans text-text">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
