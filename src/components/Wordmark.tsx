@@ -1,23 +1,27 @@
 type WordmarkProps = {
   className?: string;
-  size?: "sm" | "md" | "lg" | "hero";
+  size?: "sm" | "md" | "lg";
+  invert?: boolean;
 };
 
 const sizeClass = {
-  sm: "text-[16px]",
-  md: "text-[16px]",
-  lg: "type-display",
-  hero: "type-display",
+  sm: "text-[24px]",
+  md: "text-[26px]",
+  lg: "text-[32px]",
 } as const;
 
-export function Wordmark({ className = "", size = "md" }: WordmarkProps) {
+export function Wordmark({
+  className = "",
+  size = "md",
+  invert = false,
+}: WordmarkProps) {
   return (
     <span
       className={`font-wordmark inline-flex font-extrabold tracking-tight leading-none ${sizeClass[size]} ${className}`}
       aria-label="WellBite"
     >
-      <span className="text-primary">Well</span>
-      <span className="text-bite">Bite</span>
+      <span className={invert ? "text-white" : "text-primary"}>Well</span>
+      <span className={invert ? "text-bite" : "text-bite"}>Bite</span>
     </span>
   );
 }

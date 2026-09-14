@@ -21,7 +21,7 @@ export const mealPlans: MealPlan[] = [
     meals: ["Breakfast", "Lunch", "Dinner"],
     allowSalad: true,
     allowSplit: false,
-    description: "Full-day coverage with breakfast, lunch, and dinner.",
+    description: "Full-day meal coverage.",
     popular: true,
   },
   {
@@ -59,7 +59,7 @@ export const subscriptionDurations = [
 ] as const;
 
 export const pricingNote =
-  "Final pricing is calculated in the WellBite app based on your meals, options, and subscription duration.";
+  "Plan pricing is calculated in the WellBite app based on your selected meals, options, and subscription duration.";
 
 export function planOptionsLabel(plan: MealPlan): string {
   const parts: string[] = [];

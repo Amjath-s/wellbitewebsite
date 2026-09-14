@@ -1,8 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CtaLink } from "./CtaLink";
 import { Reveal } from "./Reveal";
 import type { MealPlan } from "@/lib/plans";
 import { planOptionsLabel } from "@/lib/plans";
+
+const planImages: Record<string, { src: string; alt: string }> = {
+  plan_1: {
+    src: "/images/hero-bowl.jpg",
+    alt: "Full-day WellBite meal bowl with grilled protein and fresh vegetables",
+  },
+  plan_2: {
+    src: "/images/nutrition-bowl.jpg",
+    alt: "WellBite breakfast and dinner style nutrition bowl",
+  },
+  plan_3: {
+    src: "/images/how-it-works-box.jpg",
+    alt: "WellBite lunch and dinner meal box",
+  },
+  plan_4: {
+    src: "/images/about-bowl.jpg",
+    alt: "WellBite breakfast and lunch meal bowl",
+  },
+};
 
 type PlanCardProps = {
   plan: MealPlan;
@@ -15,35 +35,51 @@ export function PlanCard({
   ctaHref = "/contact",
   ctaLabel = "View Plan",
 }: PlanCardProps) {
+  const image = planImages[plan.id] ?? planImages.plan_1;
+
   return (
-    <article className="plan-card-hover flex h-full flex-col rounded-xl border border-border bg-surface p-3 shadow-sm">
-      <div className="flex items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold text-text">{plan.name}</h3>
+    <article className="plan-card-hover flex h-full flex-col overflow-hidden rounded-[24px] border border-border bg-surface shadow-[var(--shadow-card)]">
+      <div className="relative h-[168px] w-full overflow-hidden">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover transition-transform duration-300 ease-out hover:scale-[1.02]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+        />
         {plan.popular && (
-          <span className="shrink-0 rounded-md bg-bite px-2 py-0.5 text-xs font-semibold text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-bite px-3 py-1 text-xs font-semibold text-white">
             Most Popular
           </span>
         )}
       </div>
 
-      <ul className="mt-2 flex flex-wrap gap-1">
-        {plan.meals.map((meal) => (
-          <li
-            key={meal}
-            className="rounded-md bg-soft-green px-2 py-0.5 text-xs font-medium text-primary"
-          >
-            {meal}
-          </li>
-        ))}
-      </ul>
-
-      <p className="mt-2 text-sm leading-relaxed text-muted">{plan.description}</p>
-      <p className="mt-1 text-sm text-primary/80">{planOptionsLabel(plan)}</p>
-
-      <div className="mt-auto pt-3">
-        <CtaLink href={ctaHref} className="w-full">
-          {ctaLabel}
-        </CtaLink>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="type-card text-text">{plan.name}</h3>
+        <p className="mt-1 text-sm text-soft-sage">
+          {plan.meals.join(" · ")}
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+          {plan.description}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {plan.meals.map((meal) => (
+            <span
+              key={meal}
+              className="rounded-full bg-pale-sage px-2.5 py-1 text-xs font-medium text-primary"
+            >
+              {meal}
+            </span>
+          ))}
+        </div>
+        <p className="mt-3 text-xs leading-relaxed text-muted">
+          {planOptionsLabel(plan)}
+        </p>
+        <div className="mt-auto pt-5">
+          <CtaLink href={ctaHref} variant="secondary" className="w-full">
+            {ctaLabel} →
+          </CtaLink>
+        </div>
       </div>
     </article>
   );
@@ -56,9 +92,9 @@ type PlanGridProps = {
 
 export function PlanGrid({ plans, ctaHref = "/contact" }: PlanGridProps) {
   return (
-    <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+    <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
       {plans.map((plan, i) => (
-        <Reveal as="li" key={plan.id} delay={i * 90}>
+        <Reveal as="li" key={plan.id} delay={i * 80}>
           <PlanCard plan={plan} ctaHref={ctaHref} />
         </Reveal>
       ))}
@@ -73,7 +109,7 @@ export function SectionHeader({
   align = "left",
 }: {
   eyebrow?: string;
-  title: string;
+  title: React.ReactNode;
   description?: string;
   align?: "left" | "center";
 }) {
@@ -84,11 +120,57 @@ export function SectionHeader({
       {eyebrow && (
         <p className="type-caption uppercase text-primary">{eyebrow}</p>
       )}
-      <h2 className="type-display mt-2 text-text">{title}</h2>
+      <h2 className="type-display mt-3 text-primary">{title}</h2>
       {description && (
-        <p className="type-body mt-2 text-muted">{description}</p>
+        <p className="type-body-lg mt-4 text-text-secondary">{description}</p>
       )}
     </header>
+  );
+}
+
+export function FeatureCard({
+  title,
+  body,
+  icon,
+}: {
+  title: string;
+  body: string;
+  icon: React.ReactNode;
+}) {
+  return (
+    <article className="flex h-full flex-col rounded-[20px] border border-border bg-soft-cream p-7">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-pale-sage text-primary">
+        {icon}
+      </div>
+      <h3 className="type-card text-text">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-text-secondary">{body}</p>
+    </article>
+  );
+}
+
+/** Phone frame for WellBite app screenshots in public/images/app/ */
+export function AppFrame({
+  label,
+  filename,
+}: {
+  label: string;
+  filename: string;
+}) {
+  return (
+    <figure className="mx-auto flex w-full max-w-[11.5rem] flex-col items-center gap-3">
+      <div className="app-slot relative">
+        <Image
+          src={`/images/app/${filename}`}
+          alt={`${label} — WellBite app screen`}
+          fill
+          className="object-cover object-top"
+          sizes="184px"
+        />
+      </div>
+      <figcaption className="text-center text-xs font-medium text-muted">
+        {label}
+      </figcaption>
+    </figure>
   );
 }
 
@@ -96,11 +178,15 @@ export function Placeholder({ children }: { children: string }) {
   return <span className="placeholder-mark">{children}</span>;
 }
 
-export function PageShell({ children }: { children: React.ReactNode }) {
+export function PageShell({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="mx-auto max-w-[76rem] px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
-      {children}
-    </div>
+    <div className={`site-shell section-pad ${className}`}>{children}</div>
   );
 }
 
@@ -129,7 +215,7 @@ export function PolicySection({
           </span>
         </span>
       </summary>
-      <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted sm:text-base">
+      <div className="mt-4 space-y-3 text-sm leading-relaxed text-text-secondary sm:text-base">
         {children}
       </div>
     </details>
