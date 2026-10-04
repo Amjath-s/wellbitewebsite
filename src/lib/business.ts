@@ -4,7 +4,7 @@
  */
 
 export const business = {
-  name: "WellBite",
+  name: "FooBite",
   tagline: "Small choices. Big results.",
   shortDescription:
     "A nutrition-focused meal subscription platform designed to make healthier eating simpler and more consistent.",
@@ -14,7 +14,7 @@ export const business = {
   phone: "[BUSINESS_PHONE]",
   address: "[BUSINESS_ADDRESS]",
   serviceAreaNote:
-    "[ACTUAL_DELIVERY_AREAS] — Delivery coverage is confirmed in the WellBite app based on your address and available kitchens.",
+    "[ACTUAL_DELIVERY_AREAS] — Delivery coverage is confirmed in the FooBite app based on your address and available kitchens.",
 
   /** Policy placeholders requiring owner / legal review */
   refundPolicy: "[ACTUAL_REFUND_POLICY]",

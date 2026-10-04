@@ -9,10 +9,10 @@ import { business } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact WellBite for questions about meal plans, subscriptions, delivery, or support.",
+    "Contact FooBite for questions about meal plans, subscriptions, delivery, or support.",
   openGraph: {
-    title: "Contact · WellBite",
-    description: "Reach WellBite with questions about plans, delivery, or support.",
+    title: "Contact · FooBite",
+    description: "Reach FooBite with questions about plans, delivery, or support.",
   },
 };
 
@@ -22,7 +22,7 @@ export default function ContactPage() {
       <SectionHeader
         eyebrow="Contact"
         title="Let's talk."
-        description="Have a question about WellBite, meal plans, subscriptions, or delivery? We'd love to hear from you."
+        description="Have a question about FooBite, meal plans, subscriptions, or delivery? We'd love to hear from you."
       />
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-14">
@@ -59,7 +59,7 @@ export default function ContactPage() {
           <div>
             <h2 className="type-caption uppercase text-primary">Subscriptions</h2>
             <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              Meal plan subscriptions are managed in the WellBite mobile app. For
+              Meal plan subscriptions are managed in the FooBite mobile app. For
               now, explore{" "}
               <Link
                 href="/meal-plans"

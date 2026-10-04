@@ -5,11 +5,11 @@ import { business, supportMailto } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Cancellation & Refund Policy",
   description:
-    "WellBite cancellation and refund policy for meal plan subscriptions.",
+    "FooBite cancellation and refund policy for meal plan subscriptions.",
   openGraph: {
-    title: "Cancellation & Refund Policy · WellBite",
+    title: "Cancellation & Refund Policy · FooBite",
     description:
-      "How cancellations and refunds work for WellBite meal subscriptions.",
+      "How cancellations and refunds work for FooBite meal subscriptions.",
   },
 };
 
@@ -19,7 +19,7 @@ export default function RefundPolicyPage() {
       <SectionHeader
         eyebrow="Legal"
         title="Cancellation & Refund Policy"
-        description="This policy explains how cancellations and refunds are handled for WellBite meal subscriptions. Sections marked with placeholders must be completed with actual business rules before launch — we do not invent refund promises."
+        description="This policy explains how cancellations and refunds are handled for FooBite meal subscriptions. Sections marked with placeholders must be completed with actual business rules before launch — we do not invent refund promises."
       />
 
       <p className="mt-4 text-sm text-muted">
@@ -35,7 +35,7 @@ export default function RefundPolicyPage() {
       <div className="mt-6 max-w-3xl">
         <PolicySection id="overview" title="1. Overview">
           <p>
-            WellBite meal subscriptions are purchased through the WellBite app
+            FooBite meal subscriptions are purchased through the FooBite app
             (when payment is enabled). This page describes the intended
             cancellation and refund framework for customers.
           </p>
@@ -44,7 +44,7 @@ export default function RefundPolicyPage() {
         <PolicySection id="how-cancel" title="2. How to Cancel">
           <p>
             To request cancellation of an active or upcoming subscription,
-            contact WellBite support or use in-app subscription management when
+            contact FooBite support or use in-app subscription management when
             available.
           </p>
           <p>
@@ -95,7 +95,7 @@ export default function RefundPolicyPage() {
         <PolicySection id="refunds" title="5. Refunds">
           <p>
             Refund eligibility, partial refunds for unused days, and exceptions
-            (for example failed delivery attributable to WellBite) must be
+            (for example failed delivery attributable to FooBite) must be
             stated accurately:
           </p>
           <p>
@@ -137,7 +137,7 @@ export default function RefundPolicyPage() {
             <Placeholder>{business.phone}</Placeholder>
           </p>
           <p className="text-xs">
-            Replace all placeholders with real WellBite business rules before
+            Replace all placeholders with real FooBite business rules before
             submitting this site for payment gateway verification.
           </p>
         </PolicySection>

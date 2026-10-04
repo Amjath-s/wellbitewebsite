@@ -26,17 +26,17 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   metadataBase: new URL("https://wellbite.app"),
   title: {
-    default: "WellBite — Personalized Meal Plans & Nutritious Meals",
-    template: "%s · WellBite",
+    default: "FooBite — Personalized Meal Plans & Nutritious Meals",
+    template: "%s · FooBite",
   },
   description:
-    "WellBite is a nutrition-focused meal subscription platform. Personalized meal plans and nutritious meals designed to make healthy eating simpler and more consistent.",
+    "FooBite is a nutrition-focused meal subscription platform. Personalized meal plans and nutritious meals designed to make healthy eating simpler and more consistent.",
   openGraph: {
-    title: "WellBite — Personalized Meal Plans & Nutritious Meals",
+    title: "FooBite — Personalized Meal Plans & Nutritious Meals",
     description:
       "Personalized meal plans and nutritious meals designed to make healthy eating simpler and more consistent.",
     type: "website",
-    siteName: "WellBite",
+    siteName: "FooBite",
   },
 };
 

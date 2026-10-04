@@ -67,7 +67,7 @@ export function Footer() {
           <div className="mt-8 space-y-2 text-sm text-[#C9D5CD]">
             <p>
               <a
-                href={supportMailto({ subject: "WellBite inquiry" })}
+                href={supportMailto({ subject: "FooBite inquiry" })}
                 className="transition-colors hover:text-white"
               >
                 <span className="placeholder-mark">{business.supportEmail}</span>
@@ -82,7 +82,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <p className="site-shell py-5 text-xs text-[#C9D5CD]">
-          © {new Date().getFullYear()} WellBite
+          © {new Date().getFullYear()} FooBite
         </p>
       </div>
     </footer>

@@ -18,7 +18,7 @@ export function ContactForm() {
     ].join("\n");
 
     window.location.href = supportMailto({
-      subject: `WellBite inquiry from ${name.trim() || "website"}`,
+      subject: `FooBite inquiry from ${name.trim() || "website"}`,
       body,
     });
   }

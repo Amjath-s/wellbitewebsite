@@ -8,19 +8,19 @@ import { planOptionsLabel } from "@/lib/plans";
 const planImages: Record<string, { src: string; alt: string }> = {
   plan_1: {
     src: "/images/hero-bowl.jpg",
-    alt: "Full-day WellBite meal bowl with grilled protein and fresh vegetables",
+    alt: "Full-day FooBite meal bowl with grilled protein and fresh vegetables",
   },
   plan_2: {
     src: "/images/nutrition-bowl.jpg",
-    alt: "WellBite breakfast and dinner style nutrition bowl",
+    alt: "FooBite breakfast and dinner style nutrition bowl",
   },
   plan_3: {
     src: "/images/how-it-works-box.jpg",
-    alt: "WellBite lunch and dinner meal box",
+    alt: "FooBite lunch and dinner meal box",
   },
   plan_4: {
     src: "/images/about-bowl.jpg",
-    alt: "WellBite breakfast and lunch meal bowl",
+    alt: "FooBite breakfast and lunch meal bowl",
   },
 };
 
@@ -148,7 +148,7 @@ export function FeatureCard({
   );
 }
 
-/** Phone frame for WellBite app screenshots in public/images/app/ */
+/** Phone frame for FooBite app screenshots in public/images/app/ */
 export function AppFrame({
   label,
   filename,
@@ -161,7 +161,7 @@ export function AppFrame({
       <div className="app-slot relative">
         <Image
           src={`/images/app/${filename}`}
-          alt={`${label} — WellBite app screen`}
+          alt={`${label} — FooBite app screen`}
           fill
           className="object-cover object-top"
           sizes="184px"
