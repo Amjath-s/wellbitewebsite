@@ -1,5 +1,5 @@
 /**
- * Meal plans mirrored from the WellBite customer app
+ * Meal plans mirrored from the FooBite customer app
  * (healthfit/assets/data/subscription_plans.json).
  * No prices — pricing is calculated in the app.
  */
@@ -59,7 +59,7 @@ export const subscriptionDurations = [
 ] as const;
 
 export const pricingNote =
-  "Plan pricing is calculated in the WellBite app based on your selected meals, options, and subscription duration.";
+  "Plan pricing is calculated in the FooBite app based on your selected meals, options, and subscription duration.";
 
 export function planOptionsLabel(plan: MealPlan): string {
   const parts: string[] = [];

@@ -18,10 +18,11 @@ export function Wordmark({
   return (
     <span
       className={`font-wordmark inline-flex font-extrabold tracking-tight leading-none ${sizeClass[size]} ${className}`}
-      aria-label="WellBite"
+      aria-label="FooBite"
     >
-      <span className={invert ? "text-white" : "text-primary"}>Well</span>
-      <span className={invert ? "text-bite" : "text-bite"}>Bite</span>
+      <span className={invert ? "text-white" : "text-primary"}>F</span>
+      <span className={invert ? "text-bite" : "text-bite"}>oo</span>
+      <span className={invert ? "text-white" : "text-primary"}>Bite</span>
     </span>
   );
 }
