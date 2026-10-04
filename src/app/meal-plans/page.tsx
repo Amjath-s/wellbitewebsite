@@ -15,9 +15,9 @@ import {
 export const metadata: Metadata = {
   title: "Meal Plans",
   description:
-    "Explore WellBite meal plans: 3 Meals, Breakfast + Dinner, Lunch + Dinner, and Breakfast + Lunch. Flexible durations from 1 to 4 weeks.",
+    "Explore FooBite meal plans: 3 Meals, Breakfast + Dinner, Lunch + Dinner, and Breakfast + Lunch. Flexible durations from 1 to 4 weeks.",
   openGraph: {
-    title: "Meal Plans · WellBite",
+    title: "Meal Plans · FooBite",
     description:
       "Choose a nutrition-focused meal plan that fits your daily routine.",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const includes = [
   {
     title: "Nutrition-focused meals",
-    body: "Meals planned with calorie and macro awareness in the WellBite app.",
+    body: "Meals planned with calorie and macro awareness in the FooBite app.",
   },
   {
     title: "Flexible durations",
@@ -54,7 +54,7 @@ export default function MealPlansPage() {
             that fits your day.
           </>
         }
-        description="These are the real meal packages available in the WellBite app. Pick the rhythm that fits your day — pricing is confirmed in-app."
+        description="These are the real meal packages available in the FooBite app. Pick the rhythm that fits your day — pricing is confirmed in-app."
       />
 
       <div className="mt-10 flex flex-wrap items-end justify-center gap-8 sm:gap-12">

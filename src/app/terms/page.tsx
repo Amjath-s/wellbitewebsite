@@ -5,10 +5,10 @@ import { business, supportMailto } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "WellBite terms and conditions for using the website, meal plans, subscriptions, payments, and delivery.",
+    "FooBite terms and conditions for using the website, meal plans, subscriptions, payments, and delivery.",
   openGraph: {
-    title: "Terms & Conditions · WellBite",
-    description: "Customer terms for WellBite meal subscription services.",
+    title: "Terms & Conditions · FooBite",
+    description: "Customer terms for FooBite meal subscription services.",
   },
 };
 
@@ -18,7 +18,7 @@ export default function TermsPage() {
       <SectionHeader
         eyebrow="Legal"
         title="Terms & Conditions"
-        description="These terms apply to your use of the WellBite website and meal subscription services. Orange markers indicate business rules that must be finalized before publishing as binding terms."
+        description="These terms apply to your use of the FooBite website and meal subscription services. Orange markers indicate business rules that must be finalized before publishing as binding terms."
       />
 
       <p className="mt-4 text-sm text-muted">
@@ -34,7 +34,7 @@ export default function TermsPage() {
       <div className="mt-6 max-w-3xl">
         <PolicySection id="acceptance" title="1. Acceptance of Terms">
           <p>
-            By accessing the WellBite website or using WellBite services, you
+            By accessing the FooBite website or using FooBite services, you
             agree to these Terms & Conditions. If you do not agree, do not use
             the service.
           </p>
@@ -42,13 +42,13 @@ export default function TermsPage() {
 
         <PolicySection id="service" title="2. About the Service">
           <p>
-            WellBite provides nutrition-focused meal subscription services,
+            FooBite provides nutrition-focused meal subscription services,
             including meal plan selection, preference-based planning, and meal
             delivery according to your selected schedule (subject to service
             coverage).
           </p>
           <p>
-            WellBite does not provide medical advice and does not claim to
+            FooBite does not provide medical advice and does not claim to
             treat, cure, or prevent any disease. Nutrition features are designed
             to support planning and consistency.
           </p>
@@ -56,7 +56,7 @@ export default function TermsPage() {
 
         <PolicySection id="accounts" title="3. Accounts">
           <p>
-            You may need an account (for example via the WellBite mobile app) to
+            You may need an account (for example via the FooBite mobile app) to
             subscribe. You are responsible for keeping account credentials
             secure and for activity under your account. Provide accurate profile
             and delivery information.
@@ -79,7 +79,7 @@ export default function TermsPage() {
 
         <PolicySection id="pricing" title="5. Pricing and Payments">
           <p>
-            Pricing for subscriptions is calculated in the WellBite app based on
+            Pricing for subscriptions is calculated in the FooBite app based on
             meals, options, and duration. Amounts shown at checkout in the app
             are the amounts payable for that subscription.
           </p>
@@ -128,22 +128,22 @@ export default function TermsPage() {
         <PolicySection id="acceptable" title="9. Acceptable Use">
           <p>
             You may not attempt to disrupt the service, access systems without
-            authorization, scrape or misuse content, or use WellBite for
+            authorization, scrape or misuse content, or use FooBite for
             unlawful purposes.
           </p>
         </PolicySection>
 
         <PolicySection id="ip" title="10. Intellectual Property">
           <p>
-            WellBite branding, website content, and product materials are owned
-            by WellBite or its licensors. You may not copy or reuse them without
+            FooBite branding, website content, and product materials are owned
+            by FooBite or its licensors. You may not copy or reuse them without
             permission, except as allowed by law.
           </p>
         </PolicySection>
 
         <PolicySection id="liability" title="11. Limitation of Liability">
           <p>
-            To the fullest extent permitted by law, WellBite is not liable for
+            To the fullest extent permitted by law, FooBite is not liable for
             indirect, incidental, or consequential damages arising from use of
             the service. Our total liability for any claim related to a
             subscription is limited as described here once finalized:
@@ -169,7 +169,7 @@ export default function TermsPage() {
             <Placeholder>{business.address}</Placeholder>
           </p>
           <p className="text-xs">
-            These are WellBite&apos;s own customer terms — not a copy of any
+            These are FooBite&apos;s own customer terms — not a copy of any
             payment provider&apos;s terms. Have them reviewed before treating
             them as final.
           </p>

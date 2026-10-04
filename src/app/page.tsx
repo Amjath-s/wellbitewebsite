@@ -230,7 +230,7 @@ export default function HomePage() {
             <div className="absolute inset-0">
               <Image
                 src="/images/hero-bowl.jpg"
-                alt="WellBite healthy meal bowl with grilled protein, quinoa, broccoli, tomatoes, greens, and avocado"
+                alt="FooBite healthy meal bowl with grilled protein, quinoa, broccoli, tomatoes, greens, and avocado"
                 fill
                 priority
                 className="object-cover object-[72%_center]"
@@ -242,12 +242,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why WellBite */}
+      {/* Why FooBite */}
       <section className="bg-surface">
         <div className="site-shell section-pad">
           <Reveal>
             <SectionHeader
-              eyebrow="Why WellBite"
+              eyebrow="Why FooBite"
               title={
                 <>
                   Healthier eating,
@@ -255,7 +255,7 @@ export default function HomePage() {
                   made simpler.
                 </>
               }
-              description="WellBite brings together nutritious meals, personalized planning, and everyday convenience in one simple routine."
+              description="FooBite brings together nutritious meals, personalized planning, and everyday convenience in one simple routine."
               align="center"
             />
           </Reveal>
@@ -281,7 +281,7 @@ export default function HomePage() {
               <div className="food-image relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:aspect-[4/5]">
                 <Image
                   src="/images/nutrition-bowl.jpg"
-                  alt="Nutrition-focused WellBite bowl with eggs, quinoa, broccoli, kale, and tomatoes"
+                  alt="Nutrition-focused FooBite bowl with eggs, quinoa, broccoli, kale, and tomatoes"
                   fill
                   className="food-image-hover object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -300,7 +300,7 @@ export default function HomePage() {
                       your goals.
                     </>
                   }
-                  description="Whether you want to maintain, lose, or gain weight, WellBite helps you stay on track with calorie-aware, nutrition-focused meals."
+                  description="Whether you want to maintain, lose, or gain weight, FooBite helps you stay on track with calorie-aware, nutrition-focused meals."
                 />
               </Reveal>
 
@@ -353,7 +353,7 @@ export default function HomePage() {
                     with your goals.
                   </h3>
                   <p className="type-body mt-3 max-w-md text-text-secondary">
-                    WellBite combines meal planning with calorie and macro
+                    FooBite combines meal planning with calorie and macro
                     awareness to help make everyday eating more intentional.
                   </p>
                   <ul className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -419,7 +419,7 @@ export default function HomePage() {
                   it&apos;s simple.
                 </>
               }
-              description="Choose your plan, set your preferences, and let WellBite take care of the routine."
+              description="Choose your plan, set your preferences, and let FooBite take care of the routine."
               align="center"
             />
           </Reveal>
@@ -432,7 +432,7 @@ export default function HomePage() {
                     <div className="food-image relative h-56 w-full max-w-[16rem] overflow-hidden">
                       <Image
                         src="/images/how-it-works-box.jpg"
-                        alt="WellBite meal box ready for delivery"
+                        alt="FooBite meal box ready for delivery"
                         fill
                         className="object-cover"
                         sizes="256px"

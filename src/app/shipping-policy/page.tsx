@@ -5,10 +5,10 @@ import { business, supportMailto } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Shipping / Delivery Policy",
   description:
-    "WellBite shipping and delivery policy for meal plan subscriptions: areas, schedule, and support.",
+    "FooBite shipping and delivery policy for meal plan subscriptions: areas, schedule, and support.",
   openGraph: {
-    title: "Shipping / Delivery Policy · WellBite",
-    description: "How WellBite meal delivery works for subscribers.",
+    title: "Shipping / Delivery Policy · FooBite",
+    description: "How FooBite meal delivery works for subscribers.",
   },
 };
 
@@ -18,7 +18,7 @@ export default function ShippingPolicyPage() {
       <SectionHeader
         eyebrow="Legal"
         title="Shipping / Delivery Policy"
-        description="WellBite delivers prepared meals as part of a subscription. This policy explains how delivery works. We do not invent delivery areas or guaranteed times — placeholders mark details the business owner must finalize."
+        description="FooBite delivers prepared meals as part of a subscription. This policy explains how delivery works. We do not invent delivery areas or guaranteed times — placeholders mark details the business owner must finalize."
       />
 
       <p className="mt-4 text-sm text-muted">
@@ -34,8 +34,8 @@ export default function ShippingPolicyPage() {
       <div className="mt-6 max-w-3xl">
         <PolicySection id="areas" title="1. Delivery Areas">
           <p>
-            Delivery is available where WellBite has active kitchen coverage for
-            your address. Coverage is confirmed in the WellBite app when you set
+            Delivery is available where FooBite has active kitchen coverage for
+            your address. Coverage is confirmed in the FooBite app when you set
             a delivery address.
           </p>
           <p>
@@ -58,7 +58,7 @@ export default function ShippingPolicyPage() {
         <PolicySection id="dates" title="3. How Delivery Dates Work">
           <p>
             Delivery dates are generated for your subscription period in the
-            product. You can review upcoming meals and statuses in the WellBite
+            product. You can review upcoming meals and statuses in the FooBite
             app when subscribed.
           </p>
           <p>
@@ -91,7 +91,7 @@ export default function ShippingPolicyPage() {
 
         <PolicySection id="process" title="6. Delivery Process">
           <ul className="list-disc space-y-1 pl-5">
-            <li>Choose a plan and set preferences in the WellBite app</li>
+            <li>Choose a plan and set preferences in the FooBite app</li>
             <li>Add and confirm delivery address(es)</li>
             <li>Kitchen assignment is handled based on coverage</li>
             <li>Meals are prepared and delivered for scheduled days</li>
@@ -104,7 +104,7 @@ export default function ShippingPolicyPage() {
             <a
               href={supportMailto({
                 subject: "Delivery issue",
-                body: "Hi WellBite,\n\nOrder / delivery date:\nMeal:\nIssue:\n",
+                body: "Hi FooBite,\n\nOrder / delivery date:\nMeal:\nIssue:\n",
               })}
               className="text-primary underline-offset-2 hover:underline"
             >

@@ -7,9 +7,9 @@ import { AppFrame, SectionHeader } from "@/components/ui";
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "How WellBite works: choose a meal plan, set your preferences and duration, then receive meals on your schedule.",
+    "How FooBite works: choose a meal plan, set your preferences and duration, then receive meals on your schedule.",
   openGraph: {
-    title: "How It Works · WellBite",
+    title: "How It Works · FooBite",
     description: "Three simple steps from plan selection to meal delivery.",
   },
 };
@@ -53,7 +53,7 @@ export default function HowItWorksPage() {
                 it&apos;s simple.
               </>
             }
-            description="Choose your plan, set your preferences, and let WellBite take care of the routine."
+            description="Choose your plan, set your preferences, and let FooBite take care of the routine."
             align="center"
           />
         </Reveal>
@@ -71,7 +71,7 @@ export default function HowItWorksPage() {
                     <div className="food-image relative aspect-[4/5] w-full max-w-md overflow-hidden">
                       <Image
                         src="/images/how-it-works-box.jpg"
-                        alt="WellBite meal box with quinoa, roasted vegetables, greens, protein, and a soft-boiled egg"
+                        alt="FooBite meal box with quinoa, roasted vegetables, greens, protein, and a soft-boiled egg"
                         fill
                         priority={i === 0}
                         className="object-cover"

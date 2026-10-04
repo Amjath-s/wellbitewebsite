@@ -8,9 +8,9 @@ import { business } from "@/lib/business";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "WellBite is a nutrition-focused meal subscription platform that combines meal planning, nutrition awareness, and convenient meal subscriptions.",
+    "FooBite is a nutrition-focused meal subscription platform that combines meal planning, nutrition awareness, and convenient meal subscriptions.",
   openGraph: {
-    title: "About · WellBite",
+    title: "About · FooBite",
     description: business.shortDescription,
   },
 };
@@ -22,7 +22,7 @@ const pillars = [
   },
   {
     title: "Healthier People",
-    body: "Goal-based planning helps you stay consistent. WellBite does not treat disease or replace a doctor or dietitian.",
+    body: "Goal-based planning helps you stay consistent. FooBite does not treat disease or replace a doctor or dietitian.",
   },
   {
     title: "Stronger Routines",
@@ -30,7 +30,7 @@ const pillars = [
   },
   {
     title: "A Healthier Tomorrow",
-    body: "Small daily choices compound. WellBite is built to make those choices easier to keep.",
+    body: "Small daily choices compound. FooBite is built to make those choices easier to keep.",
   },
 ] as const;
 
@@ -52,12 +52,12 @@ export default function AboutPage() {
               </p>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-text-secondary">
                 <p>
-                  WellBite brings together nutritious meals, personalized
+                  FooBite brings together nutritious meals, personalized
                   planning, and everyday convenience — so healthier eating fits
                   your day instead of fighting it.
                 </p>
                 <p>
-                  You set preferences in the WellBite app, choose a meal plan,
+                  You set preferences in the FooBite app, choose a meal plan,
                   pick a subscription duration, and receive meals according to
                   your schedule.
                 </p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
               <div className="food-image relative aspect-[4/5] overflow-hidden sm:aspect-[5/4]">
                 <Image
                   src="/images/about-bowl.jpg"
-                  alt="WellBite balanced meal bowl with grilled chicken, avocado, broccoli, quinoa, and fresh vegetables"
+                  alt="FooBite balanced meal bowl with grilled chicken, avocado, broccoli, quinoa, and fresh vegetables"
                   fill
                   priority
                   className="object-cover"
