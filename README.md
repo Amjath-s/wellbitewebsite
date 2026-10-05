@@ -1,4 +1,4 @@
-# WellBite Website
+# foobite Website
 
 Public marketing site for **WellBite** — a nutrition-focused meal subscription platform.
 
